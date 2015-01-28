@@ -1,25 +1,17 @@
 # Ember-cli-suggest
 
-This README outlines the details of collaborating on this Ember addon.
+This addon should take out some of the headach and boiler plate for *typeahead* behaviour. It consiste of a blueprint while will generate a component with the basic hbs. It will also include a mixin to use for the generated component (js).
 
-## Installation
+## Usage
 
-* `git clone` this repository
-* `npm install`
-* `bower install`
+### Installation
 
-## Running
+```bash
+npm install ember-cli-suggest
+```
 
-* `ember server`
-* Visit your app at http://localhost:4200.
+### Generate
 
-## Running Tests
-
-* `ember test`
-* `ember test --server`
-
-## Building
-
-* `ember build`
-
-For more information on using ember-cli, visit [http://www.ember-cli.com/](http://www.ember-cli.com/).
+```bash
+ember generate suggest my-component
+```

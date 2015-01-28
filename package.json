@@ -1,7 +1,7 @@
 {
   "name": "ember-cli-suggest",
-  "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "version": "0.0.2",
+  "description": "[Warning this is not ready for use yet!] A typeahead behaviour input box.",
   "directories": {
     "doc": "doc",
     "test": "tests"

@@ -1,0 +1,12 @@
+{{input class="typeahead" placeholder=placeHolderText value=selectedVal}}
+<span class="tt-dropdown-menu" {{bind-attr style=suggestStyles}}>
+  <div class="tt-dataset-states">
+    <span class="tt-suggestions" style="display: block;">
+      {{#each suggestions}}
+        <div class="tt-suggestion">
+          <p style="white-space: normal;" {{action 'selectItem' this }}>{{this.display}}</p>
+        </div>
+      {{/each}}
+    </span>
+  </div>
+</span>
