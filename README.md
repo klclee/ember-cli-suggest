@@ -1,6 +1,6 @@
 # Ember-cli-suggest
 
-This addon should take out some of the headach and boiler plate for *typeahead* behaviour. It consiste of a blueprint while will generate a component with the basic hbs. It will also include a mixin to use for the generated component (js).
+This addon should take out some of the headache and boiler plate for *typeahead* behaviour. It consiste of a blueprint while will generate a component with the basic hbs. It will also include a mixin to use for the generated component (js).
 
 ## Usage
 
