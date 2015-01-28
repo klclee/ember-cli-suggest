@@ -1,11 +1,13 @@
-export default Em.Mixin.create({
+import Ember from 'ember';
+
+export default Ember.Mixin.create({
   layoutName: 'components/type-ahead',
   selectedFunction: '',
   placeHolderText: '',
   doDebounce: null,
   inputVal: '',
   selectedVal: '',
-  suggestions: Em.A(),
+  suggestions: Ember.A(),
   suggestStylesOn: 'position: absolute; top: 100%; left: 0px; z-index: 100; display: block; right: auto;',
   suggestStyles: 'display:none;',
   selectedFromList: false,
@@ -52,5 +54,4 @@ export default Em.Mixin.create({
       this.send(this.selectedFunction, value);
     }
   }
-  })
-};
+});

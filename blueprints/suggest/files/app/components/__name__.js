@@ -1,6 +1,6 @@
 import Ember from 'ember';
-import Suggest from 'suggest-addon/mixins/suggest'
+import Suggest from 'suggest-addon/mixins/suggest';
 
-export default Em.Component.extend(Suggest{
+export default Ember.Component.extend(Suggest,{
   
 });
