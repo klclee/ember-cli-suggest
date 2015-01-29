@@ -25,21 +25,21 @@ Once the component is generated you will find the populated template in 'templat
 * Assign to property ```suggestions``` with the array of search result.
 * Tell the mixin what function should be called upon selected from the dropdown by assigning the function name (as String) using the ```selectedFunction``` property.
 
-### Example
+## Example
 
 The following is a example of the use of this component upon generating using ```ember generate suggest city-input```.
 
-## HBS
+### HBS
 ```
 {{city-input placeHolderText='Find a City' debounceTime=1000 selectedFunction='selectedCountry'}}
 ```
 
-## Component js
+### city-input.js
 
 ```javascript
 import Ember from 'ember';
 import Suggest from 'suggest-addon/mixins/suggest';
-import Countries from 'suggest-this/utils/countries';
+import Countries from 'suggest-this/utils/countries'; // this is just some example js I had.
 
 export default Ember.Component.extend(Suggest,{
   didInsertElement: function(){
