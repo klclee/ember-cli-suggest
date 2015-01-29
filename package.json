@@ -1,7 +1,7 @@
 {
   "name": "ember-cli-suggest",
-  "version": "0.0.4",
-  "description": "[Warning this is not ready for use yet!] A typeahead behaviour input box.",
+  "version": "0.1.0",
+  "description": "A typeahead behaviour input box.",
   "directories": {
     "doc": "doc",
     "test": "tests"

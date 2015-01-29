@@ -2,9 +2,9 @@
 <span class="tt-dropdown-menu" {{bind-attr style=suggestStyles}}>
   <div class="tt-dataset-states">
     <span class="tt-suggestions" style="display: block;">
-      {{#each suggestions}}
+      {{#each result in suggestions}}
         <div class="tt-suggestion">
-          <p style="white-space: normal;" {{action 'selectItem' this }}>{{this.display}}</p>
+          <p style="white-space: normal;" {{action 'selectItem' result }}>{{result.display}}</p>
         </div>
       {{/each}}
     </span>

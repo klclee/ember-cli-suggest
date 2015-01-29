@@ -11,22 +11,23 @@ export default Ember.Mixin.create({
   suggestStylesOn: 'position: absolute; top: 100%; left: 0px; z-index: 100; display: block; right: auto;',
   suggestStyles: 'display:none;',
   selectedFromList: false,
+  debounceTime: 0,
   keyUp: function(event){
+    var _scope = this;
     if(event.keyCode === 27){
       this.set('suggestStyles', 'display:none;');
     }else{
       var inp = String.fromCharCode(event.keyCode);
       if (/[a-zA-Z0-9-_ ]/.test(inp)){
         if(typeof this.get('targetObject').hideAlerts === 'function'){
-          this.get('targetObject').hideAlerts();      
+          this.get('targetObject').hideAlerts();
         }
         var noSpace = $(event.target).val().replace(/(^\s+|\s+$)/g);
         if($(event.target).hasClass('typeahead') && noSpace.length > 2 ){
           this.set('inputVal', noSpace);
-          Ember.run.debounce(this, this.doDebounce, 1000);
-          this.doDebounce();
+          Ember.run.debounce(this, this.doDebounce, this.debounceTime);
         }
-      } 
+      }
     }
   },
   focusOut: function(){
@@ -38,7 +39,7 @@ export default Ember.Mixin.create({
         _scope.set('selectedVal', '');
       }
     };
-    setTimeout(func, 200); // set a little delay so give the select a chance to set
+    Ember.run.later(this, func, 200); // set a little delay so give the select a chance to set
   },
   keyDown: function(){
     // 40 down 38 up
