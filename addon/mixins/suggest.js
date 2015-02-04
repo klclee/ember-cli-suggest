@@ -12,21 +12,19 @@ export default Ember.Mixin.create({
   suggestStyles: 'display:none;',
   selectedFromList: false,
   debounceTime: 0,
+  miniumCharLength: 2,
   keyUp: function(event){
     var _scope = this;
     if(event.keyCode === 27){
       this.set('suggestStyles', 'display:none;');
     }else{
-      var inp = String.fromCharCode(event.keyCode);
-      if (/[a-zA-Z0-9-_ ]/.test(inp)){
-        if(typeof this.get('targetObject').hideAlerts === 'function'){
-          this.get('targetObject').hideAlerts();
-        }
-        var noSpace = $(event.target).val().replace(/(^\s+|\s+$)/g);
-        if($(event.target).hasClass('typeahead') && noSpace.length > 2 ){
-          this.set('inputVal', noSpace);
-          Ember.run.debounce(this, this.doDebounce, this.debounceTime);
-        }
+      if(typeof this.get('targetObject').hideAlerts === 'function'){
+        this.get('targetObject').hideAlerts();
+      }
+      var noSpace = $(event.target).val().replace(/(^\s+|\s+$)/g);
+      if($(event.target).hasClass('typeahead') && noSpace.length > this.miniumCharLength ){
+        this.set('inputVal', noSpace);
+        Ember.run.debounce(this, this.doDebounce, this.debounceTime);
       }
     }
   },

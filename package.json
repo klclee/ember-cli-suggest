@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-suggest",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A typeahead behaviour input box.",
   "directories": {
     "doc": "doc",
@@ -33,7 +33,8 @@
     "glob": "^4.0.5"
   },
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "typeahead"
   ],
   "ember-addon": {
     "configPath": "tests/dummy/config"

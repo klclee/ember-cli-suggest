@@ -24,6 +24,7 @@ Once the component is generated you will find the populated template in 'templat
 * Set the debounce gap using the ```debounceTime``` property.
 * Assign to property ```suggestions``` with the array of search result.
 * Tell the mixin what function should be called upon selected from the dropdown by assigning the function name (as String) using the ```selectedFunction``` property.
+* ```miniumCharLength``` is the minium char length before triggering the debounce method. default to 2.
 
 ## Example
 
