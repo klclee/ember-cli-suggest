@@ -32,6 +32,7 @@ export default Ember.Mixin.create({
 
     var _scope = this;
     var func = function(){
+      if( _scope.isDestroyed ) return;
       _scope.set('suggestStyles', 'display:none;');
       if(!_scope.get('selectedFromList')){
         _scope.set('selectedVal', '');
