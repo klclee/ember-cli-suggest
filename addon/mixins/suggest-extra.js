@@ -13,6 +13,7 @@ export default Ember.Mixin.create({
       }else if(event.keyCode === 13){
         if(!Ember.isBlank(this.selectableSuggestion)){
           this.send('selectItem', this.selectableSuggestion);
+          this.set('suggestStyles', 'display:none;');
         }
       }
     }
