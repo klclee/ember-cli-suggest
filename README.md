@@ -61,3 +61,22 @@ export default Ember.Component.extend(Suggest,{
   }
 });
 ```
+
+## Suggest Extra
+
+If you use this component as its there is a extra mixin you can take advantage of. It will allow you to controll the list of suggestions
+with the up, down arrow keys and enter keys. To use this on components you have already generated do the following:
+
+* in your hbs template change the ```div``` with class ```tt-suggestion``` to bindable ```{{bind-attr class=":tt-suggestion result.highlight:tt-cursor"}}```
+* import the new mixin ```import SuggestExtra from 'suggest-addon/mixins/suggest-extra';``` and mix that into your component.  
+
+If you generate from version 0.1.4 this will be done for you
+
+Either way you will need to style up the a class call ```tt-cursor``` for this to take effect. Something like:
+
+```css
+.tt-suggestion.tt-cursor {
+	background-color: #333;
+	cursor:pointer;
+}
+```
