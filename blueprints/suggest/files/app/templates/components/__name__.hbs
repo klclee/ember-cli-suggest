@@ -3,8 +3,8 @@
   <div class="tt-dataset-states">
     <span class="tt-suggestions" style="display: block;">
       {{#each result in suggestions}}
-        <div class="tt-suggestion">
-          <p style="white-space: normal;" {{action 'selectItem' result }}>{{result.display}}</p>
+        <div class="tt-suggestion" {{action 'selectItem' result }}>
+          <p style="white-space: normal;">{{result.display}}</p>
         </div>
       {{/each}}
     </span>
