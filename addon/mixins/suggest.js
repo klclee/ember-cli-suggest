@@ -13,11 +13,12 @@ export default Ember.Mixin.create({
   selectedFromList: false,
   debounceTime: 0,
   miniumCharLength: 2,
+  escapedChars: [40,38, 13],
   keyUp: function(event){
     var _scope = this;
     if(event.keyCode === 27){
       this.set('suggestStyles', 'display:none;');
-    }else{
+    }else if(this.escapedChars.indexOf(event.keyCode) === -1){
       if(typeof this.get('targetObject').hideAlerts === 'function'){
         this.get('targetObject').hideAlerts();
       }
@@ -39,10 +40,6 @@ export default Ember.Mixin.create({
       }
     };
     Ember.run.later(this, func, 200); // set a little delay so give the select a chance to set
-  },
-  keyDown: function(){
-    // 40 down 38 up
-    // console.log('ddd', event.keyCode);
   },
   showLoading: function(){
     this.get('suggestions').pushObject({});

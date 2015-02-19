@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-suggest",
-  "version": "0.1.1",
+  "version": "0.1.4",
   "description": "A typeahead behaviour input box.",
   "directories": {
     "doc": "doc",
@@ -15,7 +15,7 @@
   "engines": {
     "node": ">= 0.10.0"
   },
-  "author": "klclee",
+  "author": "Charles Lee and contributors",
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.0.0",
