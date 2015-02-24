@@ -15,6 +15,9 @@ npm install ember-cli-suggest
 ```bash
 ember generate suggest my-component
 ```
+## Example
+
+You can also find a working example [here](https://github.com/klclee/suggest-example).
 
 ### Configure
 
@@ -27,9 +30,6 @@ Once the component is generated you will find the populated template in 'templat
 * ```miniumCharLength``` is the minimum char length before triggering the debounce method. default to 2.
 * override ```suggestStylesOn``` the default is [here](https://github.com/klclee/ember-cli-suggest/blob/master/addon/mixins/suggest.js#L11). Adjust that for getting the drop down to display right for your need.
 
-## Example
-
-You can also find a working example [here](https://github.com/klclee/suggest-example).
 
 ## Suggest Extra
 
