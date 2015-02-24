@@ -28,39 +28,7 @@ Once the component is generated you will find the populated template in 'templat
 
 ## Example
 
-The following is a example of the use of this component upon generating using ```ember generate suggest city-input```.
-
-### HBS
-```
-{{city-input placeHolderText='Find a City' debounceTime=1000 selectedFunction='selectedCountry'}}
-```
-
-### city-input.js
-
-```javascript
-import Ember from 'ember';
-import Suggest from 'suggest-addon/mixins/suggest';
-import Countries from 'suggest-this/utils/countries'; // this is just some example js I had.
-
-export default Ember.Component.extend(Suggest,{
-  didInsertElement: function(){
-    this.set('doDebounce', this.searchCountry);
-  },
-  searchCountry: function(){
-    var _scope = this;
-    var found = Countries.findBy('display', this.inputVal);
-
-    this.set('suggestions',[found]);
-    this.set('suggestStyles', _scope.get('suggestStylesOn'));
-
-  },
-  actions: {
-    selectCity: function(item){
-      this.set('selectedVal', item.get('name'));
-    }
-  }
-});
-```
+You can also find a working example [here](https://github.com/klclee/suggest-example).
 
 ## Suggest Extra
 
