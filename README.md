@@ -7,7 +7,7 @@ This addon should take out some of the headache and boiler plate for *typeahead*
 ### Installation
 
 ```bash
-npm install ember-cli-suggest
+npm install ember-cli-suggest --save-dev
 ```
 
 ### Generate
