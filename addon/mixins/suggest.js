@@ -22,7 +22,7 @@ export default Ember.Mixin.create({
       if(typeof this.get('targetObject').hideAlerts === 'function'){
         this.get('targetObject').hideAlerts();
       }
-      var noSpace = $(event.target).val().replace(/(^\s+|\s+$)/g);
+      var noSpace = $(event.target).val().replace(/(^\s+|\s+$)/g, '');
       if($(event.target).hasClass('typeahead') && noSpace.length > this.miniumCharLength ){
         this.set('inputVal', noSpace);
         Ember.run.debounce(this, this.doDebounce, this.debounceTime);
