@@ -5,7 +5,7 @@ export default Ember.Mixin.create({
   selectableSuggestion: null,
   keyDown: function(event){
     this._super(event);
-    if( this.get('suggestStyles') !== 'display:none;'){
+    if( this.get('showSuggest') === true){
       if (event.keyCode === 40){
         this._highlightResult('down');
       }else if (event.keyCode === 38){
@@ -13,7 +13,7 @@ export default Ember.Mixin.create({
       }else if(event.keyCode === 13){
         if(!Ember.isBlank(this.selectableSuggestion)){
           this.send('selectItem', this.selectableSuggestion);
-          this.set('suggestStyles', 'display:none;');
+          this.set('showSuggest', false);
         }
       }
     }
