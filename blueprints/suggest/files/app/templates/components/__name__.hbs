@@ -1,12 +1,14 @@
+<span class="twitter-typeahead" style="position: relative; display: block; direction: ltr;">
 {{input class="typeahead" placeholder=placeHolderText value=selectedVal}}
 <span class="tt-dropdown-menu" {{bind-attr style=suggestStyles}}>
   <div class="tt-dataset-states">
-    <span class="tt-suggestions" style="display: block;">
+    <span class="tt-suggestions {{if showSuggest 'list-open' 'list-closed'}}">
       {{#each result in suggestions}}
-        <div {{bind-attr class=":tt-suggestion result.highlight:tt-cursor"}} {{action 'selectItem' result }}>
+        <div class="tt-suggestion {{if result.highlight 'tt-cursor'}}" {{action 'selectItem' result }}>
           <p style="white-space: normal;">{{result.display}}</p>
         </div>
       {{/each}}
     </span>
   </div>
 </span>
+<span>

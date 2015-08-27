@@ -7,16 +7,15 @@ export default Ember.Mixin.create({
   inputVal: '',
   selectedVal: '',
   suggestions: Ember.A(),
-  suggestStylesOn: 'position: absolute; top: 100%; left: 0px; z-index: 100; display: block; right: auto;',
-  suggestStyles: 'display:none;',
   selectedFromList: false,
   debounceTime: 0,
   miniumCharLength: 2,
   escapedChars: [40,38, 13],
+  showSuggest: false,
   keyUp: function(event){
     var _scope = this;
     if(event.keyCode === 27){
-      this.set('suggestStyles', 'display:none;');
+      this.set('showSuggest', false);
     }else if(this.escapedChars.indexOf(event.keyCode) === -1){
       if(typeof this.get('targetObject').hideAlerts === 'function'){
         this.get('targetObject').hideAlerts();
@@ -33,16 +32,12 @@ export default Ember.Mixin.create({
     var _scope = this;
     var func = function(){
       if( _scope.isDestroyed ) return;
-      _scope.set('suggestStyles', 'display:none;');
+      _scope.set('showSuggest', false);
       if(!_scope.get('selectedFromList')){
         _scope.set('selectedVal', '');
       }
     };
-    Ember.run.later(this, func, 200); // set a little delay so give the select a chance to set
-  },
-  showLoading: function(){
-    this.get('suggestions').pushObject({});
-    this.set('suggestStyles', this.get('suggestStylesOn'));
+    Ember.run.later(this, func, 300); // set a little delay so give the select a chance to set
   },
   actions: {
     selectItem: function(value){
