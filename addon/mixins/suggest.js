@@ -7,7 +7,6 @@ export default Ember.Mixin.create({
   inputVal: '',
   selectedVal: '',
   suggestions: Ember.A(),
-  selectedFromList: false,
   debounceTime: 0,
   miniumCharLength: 2,
   escapedChars: [40,38, 13],
@@ -33,15 +32,11 @@ export default Ember.Mixin.create({
     var func = function(){
       if( _scope.isDestroyed ) return;
       _scope.set('showSuggest', false);
-      if(!_scope.get('selectedFromList')){
-        _scope.set('selectedVal', '');
-      }
     };
     Ember.run.later(this, func, 300); // set a little delay so give the select a chance to set
   },
   actions: {
     selectItem: function(value){
-      this.set('selectedFromList', true);
       this.send(this.selectedFunction, value);
     }
   }
